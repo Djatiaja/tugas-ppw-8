@@ -8,7 +8,9 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <title>Hello, world!</title>
 </head>
 <style>
@@ -17,12 +19,34 @@
     padding-bottom: 14px;
   }
 
-  svg{
+  .icon svg{
     color: black;
   }
 
-  svg:hover{
-    color: #5BD1d7;
+  .icon svg:hover{
+    color: rgb(114, 174, 200) !important;
+  }
+
+  .nav-link{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(113, 113, 113) !important;
+  }
+
+  .nav-link:focus {
+    color: rgb(114, 174, 200) !important;
+  }
+
+  .navbar-nav a{
+color: black;
+  }
+
+  .dropdown-menu li .dropdown-item{
+    font-size: 16px;
+  }
+
+  body{
+    font-family: "Lato", sans-serif;
   }
 </style>
 
@@ -40,18 +64,37 @@
 
       <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
         <div class="d-flex justify-content-end w-100">
-          <div class="navbar-nav d-flex justify-content-evenly" style="width: 500px;">
+          <div class="navbar-nav d-flex justify-content-evenly me-4" style="width: 580px;">
             <a class="nav-link active" aria-current="page" href="#">HOME</a>
             <a class="nav-link" href="#"> SERVICE</a>
             <a class="nav-link" href="#">PRODUCTS</a>
             <a class="nav-link" href="#">WATCHES</a>
             <a class="nav-link" href="#">SALE</a>
             <a class="nav-link" href="#">BLOG</a> 
+            <div class="dropdown">
+              <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                PAGE
+                <label for="dropdownMenuLink">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                    <path fill="currentcolor" d="M7 10l5 5 5-5"/>
+                    </svg>
+                </label>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">ABOUT</a></li>
+                <li><a class="dropdown-item" href="#">BLOG</a></li>
+                <li><a class="dropdown-item" href="#">SHOP</a></li>
+                <li><a class="dropdown-item" href="#">CHART</a></li>
+                <li><a class="dropdown-item" href="#">SINGLE POST</a></li>
+                <li><a class="dropdown-item" href="#">SINGLE PRODUCT</a></li>
+                <li><a class="dropdown-item" href="#">CONTACT</a></li>
+              </ul>
+            </div>
 
           </div>
-          <div class="icon d-flex justify-content-evenly align-self-center " style="width: 100px;">
+          <div class="icon d-flex justify-content-evenly align-self-center " style="width: 120px;">
             <a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30"  >
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 30 30"  >
                 <path
                 fill="currentcolor"
                   d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z">
@@ -59,12 +102,12 @@
               </svg>
             </a>
             <a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 16 16" width="20" height="20">
+              <svg xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 16 16" width="16" height="16">
                 <path fill="currentcolor" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
               </svg>
             </a>
             <a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 16 16" width="20" height="20">
+              <svg xmlns="http://www.w3.org/2000/svg" id="cart" viewBox="0 0 16 16" width="16" height="16">
                 <path  fill="currentcolor" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
               </svg>
             </a>
@@ -74,6 +117,9 @@
       </div>
     </div>
   </nav>
+
+
+  
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
